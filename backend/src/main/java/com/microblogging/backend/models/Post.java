@@ -30,7 +30,7 @@ public class Post {
         this.description = description;
         this.createdAt = createdAt;
     }
-    
+
     // Getters et setters
     public Long getId() {
         return id;

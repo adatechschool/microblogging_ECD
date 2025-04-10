@@ -1,4 +1,4 @@
--- Insertion des utilisateurs 
+-- -- Insertion des utilisateurs 
 -- INSERT INTO Users (id, alias, email) VALUES 
 -- (1, 'User1', 'user1@example.com'), 
 -- (2, 'User2', 'user2@example.com'),
@@ -7,7 +7,7 @@
 -- (5, 'User5', 'user5@example.com');
 
 
--- Vérifiez d'abord le nom exact de la colonne
+-- -- Vérifiez d'abord le nom exact de la colonne
 -- INSERT INTO Posts (description, created_at) VALUES 
 -- ('je poste', '2025-02-12'), 
 -- ('tu postes', '2025-03-12'), 
