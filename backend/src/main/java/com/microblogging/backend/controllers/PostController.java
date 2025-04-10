@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.microblogging.backend.models.Post;
 import com.microblogging.backend.services.PostService;
-
 @RestController
 @RequestMapping("/api")
 public class PostController {
