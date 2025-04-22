@@ -1,10 +1,9 @@
 package com.microblogging.backend.repositories;
 
-public class UserRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    public static Object findByEmail(String email) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findByEmail'");
-    }
-    
+import com.microblogging.backend.models.User;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    User save(User user);
 }
