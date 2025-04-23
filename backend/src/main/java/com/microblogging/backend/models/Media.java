@@ -35,6 +35,11 @@ public class Media {
         this.mediaType = mediaType;
     }
     
+    //CONSTRUCTEUR FAUX
+    public Media(Long mediaId, String string, String string2, Object object) {
+        //TODO Auto-generated constructor stub
+    }
+
     // Getters et setters
     public Long getId() {
         return id;
