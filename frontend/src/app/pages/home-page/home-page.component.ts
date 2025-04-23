@@ -5,6 +5,7 @@ import { SidebarLeftComponent } from '../../Components/sidebar-left/sidebar-left
 import { SidebarRightComponent } from "../../Components/sidebar-right/sidebar-right.component";
 import { SearchBarComponent } from "../../Components/search-bar/search-bar.component";
 import { PostCard } from '../../models/card-post';
+import { Media } from '../../models/media';
 import { CommonModule } from '@angular/common';
 import { PostService } from '../../Services/post.services';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class HomePageComponent implements OnInit {
 
   cardPost: PostCard[] = [];
+  media: Media[]= [];
   loading = true;
   error = false;
 
@@ -26,12 +28,27 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadPosts();
+    this.loadMedias();
   }
 
   private loadPosts() {
     this.postService.getPosts().subscribe({
       next: (data) => {
         this.cardPost = data;
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Erreur lors de la récupération des données', err);
+        this.error = true;
+        this.loading = false;
+      },
+    });
+  }
+
+  private loadMedias() {
+    this.postService.getMedias().subscribe({
+      next: (data) => {
+        this.media = data;
         this.loading = false;
       },
       error: (err) => {
