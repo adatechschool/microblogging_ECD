@@ -1,16 +1,21 @@
 <!-- Fil principal -->
- <main class="main-feed">
-    <div class="card-wrapper">
-        <strong class="card-title">{{ post.user }}</strong>
-        <img
-          [src]="post.imageUrl"
-          alt="{{ post.user }}"
-          class="card-image"
-        />
-        <div class="card-footer">
-            <p class="post-description">{{ post.description }}</p>
-            <a [routerLink]="['/post', post.id]" class="details-link">
-          </a>
-        </div>
-      </div>
-  </main>
+<main class="main-feed">
+  <div class="card-wrapper">
+    <!-- Nom de l’utilisateur -->
+    <strong class="card-title">{{ post.user }}</strong>
+
+    <!-- Image du post -->
+    <img 
+      [src]="post.imageUrl" 
+      alt="Image du post"
+      class="card-image"
+    />
+
+    <!-- Description et lien détails -->
+    <div class="card-footer">
+      <p class="post-description">{{ post.description }}</p>
+      <a [routerLink]="['/post', post.id]" class="details-link">
+      </a>
+    </div>
+  </div>
+</main>
