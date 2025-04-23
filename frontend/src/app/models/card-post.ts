@@ -1,7 +1,9 @@
 export interface PostCard {
   id: number;
-  user: string;
-  imageUrl: string;
+  user: {
+    alias: string;
+    profilPictureUrl?: string;
+  }
   description: string;
   createdAt: number;
 }

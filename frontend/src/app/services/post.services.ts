@@ -3,6 +3,7 @@ import { PostCard } from "../models/card-post";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map, Observable, of } from 'rxjs';
+import { Media } from "../models/media";
 
 @Injectable({
     providedIn: 'root',
@@ -20,7 +21,6 @@ export class PostService {
               const PostCard: PostCard = {
                 id: response.id || 0,
                 user: response.user || '',
-                imageUrl: response.imageUrl || '',
                 description: response.description || '',
                 createdAt: response.createdAt || '',
               };
@@ -32,11 +32,34 @@ export class PostService {
             return response.map((item: any) => ({
               id: item.id || 0,
               user: item.user || '',
-              imageUrl: item.imageUrl || '',
               description: item.description || '',
               createdAt: item.createdAt || '',
             }));
           })
         );
       }
+
+      getMedias(): Observable<Media[]> {
+        return this.http.get<any>(`${this.apiUrl}/media`).pipe(
+          map((response) => {
+            // Si l'API renvoie un objet unique, le transformer en tableau
+            if (!Array.isArray(response)) {
+              const Media: Media = {
+                id: response.id || 0,
+                mediaUrl: response.mediaUrl || '',
+              };
+    
+              return [Media];
+            }
+    
+            // Si l'API renvoie déjà un tableau
+            return response.map((item: any) => ({
+              id: item.id || 0,
+              mediaUrl: item.mediaUrl || '',
+            }));
+          })
+        );
+      }
+
+
 } 

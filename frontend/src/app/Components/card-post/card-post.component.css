@@ -12,6 +12,7 @@
 .card-title {
   padding: 0.8rem;
   display: block;
+  color: aliceblue;
   font-weight: bold;
 }
 
@@ -19,6 +20,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+  display: block;
 }
 
 .card-footer {

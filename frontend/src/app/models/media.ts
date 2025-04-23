@@ -1,6 +1,5 @@
-export interface Post {
+export interface Media {
     id: number;
-    post: string;
     mediaUrl: string;
     // mediaType: 'IMAGE' | 'VIDEO' | 'AUDIO';
   }

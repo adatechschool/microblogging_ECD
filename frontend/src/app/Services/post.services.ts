@@ -3,6 +3,7 @@ import { PostCard } from "../models/card-post";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map, Observable, of } from 'rxjs';
+import { UserCard } from "../models/user-card";
 
 @Injectable({
     providedIn: 'root',
@@ -20,7 +21,7 @@ export class PostService {
               const PostCard: PostCard = {
                 id: response.id || 0,
                 user: response.user || '',
-                imageUrl: response.imageUrl || '',
+                mediaUrl: response.mediaUrl || '',
                 description: response.description || '',
                 createdAt: response.createdAt || '',
               };
@@ -32,11 +33,21 @@ export class PostService {
             return response.map((item: any) => ({
               id: item.id || 0,
               user: item.user || '',
-              imageUrl: item.imageUrl || '',
+              mediaUrl: item.mediaUrl || '',
               description: item.description || '',
               createdAt: item.createdAt || '',
             }));
           })
         );
       }
+
+      // getUserById(id: number): Observable<UserCard> {
+      //   return this.http.get<any>(`${this.apiUrl}/posts/${id}`).pipe(
+      //     map((response) => ({
+      //       ...response,
+      //       user: response.userNames,
+      //     }))
+      //   );
+      // }
+
 } 
