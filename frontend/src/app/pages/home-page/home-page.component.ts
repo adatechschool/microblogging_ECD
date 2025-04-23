@@ -6,7 +6,7 @@ import { SidebarRightComponent } from "../../Components/sidebar-right/sidebar-ri
 import { SearchBarComponent } from "../../Components/search-bar/search-bar.component";
 import { PostCard } from '../../models/card-post';
 import { CommonModule } from '@angular/common';
-import { PostService } from '../../Services/post.services';
+import { PostService } from '../../services/post.services';
 import { HttpClientModule } from '@angular/common/http';
 
 
