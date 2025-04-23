@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './search-bar.component.css'
 })
 export class SearchBarComponent {
+  searchText: string = '';
 
+  onSearch(): void {
+    console.log('Recherche :', this.searchText);
+    // Appeler ici un service ou émettre un event
+  }
 }

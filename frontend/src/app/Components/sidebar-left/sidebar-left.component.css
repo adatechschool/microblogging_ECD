@@ -1,0 +1,17 @@
+.sidebar-left {
+  width: 20%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-logout {
+  margin-left:4rem;
+  padding: 0.5rem 1rem;
+  background-color: #00a887;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

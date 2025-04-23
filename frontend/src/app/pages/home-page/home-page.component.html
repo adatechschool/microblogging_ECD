@@ -1,29 +1,17 @@
 <div class="app-layout">
-    <!-- Sidebar gauche -->
-    <aside class="sidebar-left">
-      <img src="assets/logo.png" alt="Logo" class="logo" />
-      <app-user-card></app-user-card>
-      <button class="btn-logout">Déconnexion</button>
-    </aside>
-  
-    <!-- Fil principal -->
-    <main class="main-feed">
-      <app-card-post></app-card-post>
-      <!-- <app-post *ngFor="let post of posts" [post]="post"></app-post> -->
-    </main>
-  
-    <!-- Sidebar droite -->
-    <aside class="sidebar-right">
-      <app-search-bar></app-search-bar>
-      <div class="suggestions">
-        <!-- <app-user-card *ngFor="let user of suggestedUsers" [user]="user"></app-user-card> -->
-      </div>
-      <div class="hashtags">
-        <h4>Les plus recherchés</h4>
-        <ul>
-          <li>#blabla</li>
-          <li>#blabla</li>
-        </ul>
-      </div>
-    </aside>
+ 
+  <app-sidebar-left></app-sidebar-left> 
+  <div *ngIf="loading" class="loader">
+    <p>Chargement des données...</p>
   </div>
+  <section
+    *ngIf="cardPosts.length > 0 && !loading"
+    class="posts-list"
+  ><card-post
+  *ngFor="let post of cardPosts"
+  [post]="post"></card-post>
+  </section>
+  <app-sidebar-right></app-sidebar-right>
+  <app-search-bar></app-search-bar>
+  
+</div>
