@@ -1,7 +1,7 @@
 .header-layout{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background-color: #1e1e1e;
   color: #fff;
   padding: 2rem;
@@ -11,5 +11,5 @@
 }
 
 .logo {
-    width: 70px;
+    width: 80px;
   }
