@@ -1,0 +1,11 @@
+.new-post{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    height: 40vh;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    border-color: #00a887;
+}
