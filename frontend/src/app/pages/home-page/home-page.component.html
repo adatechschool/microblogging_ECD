@@ -5,10 +5,10 @@
     <p>Chargement des données...</p>
   </div>
   <section
-    *ngIf="cardPosts.length > 0 && !loading"
+    *ngIf="cardPost.length > 0 && !loading"
     class="posts-list"
   ><card-post
-  *ngFor="let post of cardPosts"
+  *ngFor="let post of cardPost"
   [post]="post"></card-post>
   </section>
   <app-sidebar-right></app-sidebar-right>
