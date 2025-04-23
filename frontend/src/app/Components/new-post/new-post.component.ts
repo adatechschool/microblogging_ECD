@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './new-post.component.css'
 })
 export class NewPostComponent {
+  searchText: string = '';
 
+  onSearch(): void {
+    console.log('Recherche :', this.searchText);
+    // Appeler ici un service ou émettre un event
+  }
 }

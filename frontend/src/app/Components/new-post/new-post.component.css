@@ -1,11 +1,25 @@
-.new-post{
+.new-post {
     display: flex;
     align-items: center;
     margin-left: auto;
-    padding: 0.5rem 1rem;
-    height: 40vh;
     color: #fff;
     border: none;
     border-radius: 5px;
+  }
+
+  .post-button {
+    background-color: #00a887;
+    height: 5rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .post-input {
+    color: #fff;
+    background-color: transparent;
+    height: 5rem;
+    width: 20rem;
+    border-radius: 5px;
     border-color: #00a887;
-}
+  }

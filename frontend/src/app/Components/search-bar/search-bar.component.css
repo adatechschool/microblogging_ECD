@@ -2,9 +2,9 @@
     display: flex;
     align-items: center;
     margin-left: auto;
-    padding: 0.5rem 1rem;
+    padding-top: 2rem;
     color: #fff;
-    border: none;
+    border: #00a887;
     border-radius: 5px;
   }
 
@@ -17,7 +17,10 @@
   }
 
   .search-input {
+    color: #fff;
+    border-color: #00a887;
+    background-color: transparent;
     padding: 0.5rem;
-    width: 200px;
+    width: 100px;
     border-radius: 5px;
   }
