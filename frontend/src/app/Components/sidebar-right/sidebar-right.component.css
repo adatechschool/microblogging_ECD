@@ -1,12 +1,25 @@
-.sidebar-right {
-  width: 33%;
-  min-width: 200px;
-  padding: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-left: 1px solid #00a887;
-  height: 100vh;
+:host {
+  display: block;
+  padding: 2rem;
+  height: 100%;
   box-sizing: border-box;
-  position: relative;
-  }
+}
+
+.suggestions, .hashtags {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.hashtags h4 {
+  margin-bottom: 0.5rem;
+}
+
+.hashtags ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hashtags li {
+  margin-bottom: 0.5rem;
+  color: #00a887;
+}

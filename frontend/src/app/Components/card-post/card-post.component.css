@@ -1,15 +1,31 @@
-.main-feed {
-    width: 20%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+:host {
+  display: block;
+  margin-bottom: 1.5rem;
+}
 
-  .card-wrapper{
-    display: flex;
-    background-color: #1e1e1e;
-    color: #ffffff;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-  }
+.card-wrapper {
+  background-color: #2d2d2d;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-title {
+  padding: 0.8rem;
+  display: block;
+  font-weight: bold;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-footer {
+  padding: 0.8rem;
+}
+
+.post-description {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
