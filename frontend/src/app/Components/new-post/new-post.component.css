@@ -10,6 +10,7 @@
   .post-button {
     background-color: #00a887;
     height: 5rem;
+    width: 4rem;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -17,9 +18,9 @@
 
   .post-input {
     color: #fff;
-    background-color: transparent;
     height: 5rem;
     width: 20rem;
+    background-color: transparent;
+    border: 2px solid #00a887;
     border-radius: 5px;
-    border-color: #00a887;
   }

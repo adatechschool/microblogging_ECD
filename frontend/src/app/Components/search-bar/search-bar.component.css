@@ -3,14 +3,13 @@
     align-items: center;
     margin-left: auto;
     padding-top: 2rem;
-    color: #fff;
-    border: #00a887;
     border-radius: 5px;
   }
 
   .search-button{
     background-color: #00a887;
     height: 2rem;
+    width: 5rem;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -18,9 +17,9 @@
 
   .search-input {
     color: #fff;
-    border-color: #00a887;
+    border: 2px solid #00a887;
     background-color: transparent;
     padding: 0.5rem;
-    width: 100px;
+    width: 130px;
     border-radius: 5px;
   }
