@@ -1,17 +1,21 @@
 <div class="app-layout">
  
   <app-sidebar-left></app-sidebar-left> 
-  <div *ngIf="loading" class="loader">
-    <p>Chargement des données...</p>
+  <div class="main-content">
+    <div *ngIf="loading" class="loader">
+      <p>Chargement des données...</p>
+    </div>
+
+    <section
+      *ngIf="cardPost.length > 0 && !loading"
+      class="posts-list"
+    >
+      <card-post
+        *ngFor="let post of cardPost"
+        [post]="post"
+      ></card-post>
+    </section>
   </div>
-  <section
-    *ngIf="cardPost.length > 0 && !loading"
-    class="posts-list"
-  ><card-post
-  *ngFor="let post of cardPost"
-  [post]="post"></card-post>
-  </section>
   <app-sidebar-right></app-sidebar-right>
-  <app-search-bar></app-search-bar>
   
 </div>
