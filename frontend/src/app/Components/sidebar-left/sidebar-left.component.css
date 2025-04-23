@@ -1,0 +1,25 @@
+.sidebar-left {
+  width: 33%;
+  min-width: 200px;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #00a887;
+  height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.btn-logout {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  background-color: #00a887;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

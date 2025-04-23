@@ -2,9 +2,12 @@ package com.microblogging.backend.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.microblogging.backend.models.Post;
 import com.microblogging.backend.repositories.PostRepository;
 
+@Service
 public class PostService {
 
     private final PostRepository postRepository;

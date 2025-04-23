@@ -1,0 +1,12 @@
+.sidebar-right {
+  width: 33%;
+  min-width: 200px;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 1px solid #00a887;
+  height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  }
