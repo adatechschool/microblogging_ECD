@@ -1,4 +1,4 @@
-export interface Post {
+export interface CardPost {
     id: number;
     user: string;
     description: string;
