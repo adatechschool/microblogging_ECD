@@ -16,19 +16,22 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
+export class HomePageComponent implements OnInit {
 
-export class HomePageComponent implements OnInit { 
-  cardPosts: PostCard[] = [];
+  cardPost: PostCard[] = [];
   loading = true;
   error = false;
+
   constructor(private readonly postService: PostService) {}
+
   ngOnInit(): void {
     this.loadPosts();
   }
+
   private loadPosts() {
     this.postService.getPosts().subscribe({
       next: (data) => {
-        this.cardPosts = data;
+        this.cardPost = data;
         this.loading = false;
       },
       error: (err) => {
