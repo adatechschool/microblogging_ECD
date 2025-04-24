@@ -1,8 +1,9 @@
 <div class="new-post">
     <input
+    #myInput
     type="text"
     placeholder="Rédiger le poste ici..."
     class="post-input"
   />
-  <button class="post-button"(click)="onSearch()">Poster</button>
+  <button class="post-button"(click)="onPost(myInput.value)">Poster</button>
   </div>
