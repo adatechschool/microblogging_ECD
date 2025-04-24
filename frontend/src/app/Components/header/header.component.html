@@ -1,5 +1,6 @@
 <div class = 'header-layout'>
 <img src="CEDLogo.png" alt="Logo" class="logo" />
-<app-new-post></app-new-post>
+<app-new-post (formSubmit)="handlePostSubmission($event)"></app-new-post>
+
 <app-search-bar></app-search-bar>
 </div>

@@ -10,4 +10,8 @@ import { NewPostComponent } from "../new-post/new-post.component";
 })
 export class HeaderComponent {
 
+  handlePostSubmission(postData: any): void {
+    console.log('Post reçu dans le HeaderComponent:', postData);
+
+}
 }

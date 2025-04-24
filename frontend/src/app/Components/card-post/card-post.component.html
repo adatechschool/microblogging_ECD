@@ -1,19 +1,21 @@
 <!-- Fil principal -->
- <main class="main-feed">
-    <div class="card-wrapper">
-      <!-- <img
-          [src]="media.mediaUrl"
-          alt="{{ post.user.alias }}"
-          class="card-image"
-        /> -->
-        <strong class="card-title">{{ post.user.alias }}</strong>
-        <img
-          [src]="post.user.profilPictureUrl"
-          alt="{{ post.user.alias }}"
-          class="card-image"
-        />
-        <div class="card-footer">
-            <p class="post-description">{{ post.description }}</p>
-        </div>
-      </div>
-  </main>
+<main class="main-feed">
+  <div class="card-wrapper">
+    <div class="card-header">
+      <img
+        [src]="post.user.profilPictureUrl"
+        alt="{{ post.user.alias }}"
+        class="card-picture"
+      />
+      <strong class="card-title">{{ post.user.alias }}</strong>
+    </div>
+    <!-- <img
+      [src]="media.mediaUrl"
+      alt="{{ post.user.alias }}"
+      class="card-image"
+    /> -->
+    <div class="card-footer">
+      <p class="post-description">{{ post.description }}</p>
+    </div>
+  </div>
+</main>

@@ -1,8 +1,35 @@
 <div class="new-post">
-    <input
-    type="text"
-    placeholder="Rédiger le poste ici..."
-    class="post-input"
-  />
-  <button class="post-button"(click)="onSearch()">Poster</button>
-  </div>
+  <form [formGroup]="postForm" (ngSubmit)="submit()" class="post-form">
+    <textarea
+      formControlName="description"
+      placeholder="Rédiger le poste ici..."
+      class="post-input"
+    ></textarea>
+    
+    <div formArrayName="imageUrls" class="image-urls">
+      <div *ngFor="let imageUrl of imageUrls.controls; let i = index" class="image-url-input">
+        <input 
+          type="text" 
+          [formControlName]="i" 
+          placeholder="URL de l'image"
+          class="post-input image-url"
+        >
+        <button 
+          *ngIf="i > 0" 
+          type="button"
+          (click)="removeImageUrl(i)" 
+          class="remove-button"
+        >
+          X
+        </button>
+      </div>
+      <button type="button" (click)="addImageUrl()" class="add-button">
+        + Ajouter une image
+      </button>
+    </div>
+    
+    <button type="submit" [disabled]="postForm.invalid" class="post-button">
+      Publier
+    </button>
+  </form>
+</div>
