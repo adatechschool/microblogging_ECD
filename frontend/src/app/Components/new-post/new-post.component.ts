@@ -1,20 +1,11 @@
-// new-post.component.ts
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  FormArray,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Ajoutez cet import
+import { PostCard } from '../../models/card-post';
+import { PostService } from '../../Services/post.services';
+import { dateTimestampProvider } from 'rxjs/internal/scheduler/dateTimestampProvider';
+import { UserCard } from '../../models/user-card'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-new-post',
@@ -23,70 +14,37 @@ import { FormsModule } from '@angular/forms'; // Ajoutez cet import
   templateUrl: './new-post.component.html',
   styleUrl: './new-post.component.css'
 })
-export class NewPostComponent implements OnInit {
-  @Input() initialData: any = null;
-  @Output() formSubmit: EventEmitter<any> = new EventEmitter<any>();
-  
-  postForm!: FormGroup;
-  error: string = '';
-  searchText: string = '';
+export class NewPostComponent {
 
-  constructor(private readonly fb: FormBuilder) {}
+  constructor(private readonly postService: PostService) {}
 
-  ngOnInit(): void {
-    this.buildForm();
-    if (this.initialData) {
-      this.populateForm(this.initialData);
-    }
+  //remplacer avec les données de l'utilisateur connecté
+  userdata: UserCard = 
+  {
+    id: 1,
+    alias: "User1",
+    email: "user1@example.com",
+    password: "",
+    profilPictureUrl: "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?t=st=1745410665~exp=1745414265~hmac=4ebab1e71efa3d1133b88ade9d9e588512da522e6cb421e676f92366022790e4&w=826",
+    biography: ""
   }
 
-  private buildForm(): void {
-    this.postForm = this.fb.group({
-      description: ['', Validators.required],
-      imageUrls: this.fb.array([this.fb.control('')])
+  description: string = "Description du post";
+
+  onPost(myInput : string): void {
+    const postdata : object = {
+      user: this.userdata,
+      description: myInput,
+      createdAt: new Date().toISOString()
+    };
+    this.postService.createPost(postdata).subscribe({
+      next: (response) => {
+        console.log('Post créé avec succès', response);
+      },
+      error: (error) => {
+        console.error('Erreur lors de la création du post', error);
+      }
     });
   }
 
-  private populateForm(data: any): void {
-    this.postForm.patchValue({
-      description: data.description
-    });
-    
-    const imageUrlsArray = this.postForm.get('imageUrls') as FormArray;
-    imageUrlsArray.clear();
-    
-    if (data.imageUrls && data.imageUrls.length > 0) {
-      data.imageUrls.forEach((url: string) => {
-        imageUrlsArray.push(this.fb.control(url));
-      });
-    } else {
-      imageUrlsArray.push(this.fb.control(''));
-    }
-  }
-
-  get imageUrls(): FormArray {
-    return this.postForm.get('imageUrls') as FormArray;
-  }
-
-  addImageUrl(): void {
-    this.imageUrls.push(this.fb.control(''));
-  }
-
-  removeImageUrl(index: number): void {
-    this.imageUrls.removeAt(index);
-  }
-
-  onSearch(): void {
-    console.log('Recherche :', this.searchText);
-    // Appeler ici un service ou émettre un event
-  }
-
-  submit(): void {
-    if (this.postForm.invalid) {
-      this.error = 'Veuillez ajouter une description.';
-      return;
-    }
-    this.error = '';
-    this.formSubmit.emit(this.postForm.value);
-  }
 }
