@@ -48,10 +48,10 @@ export class PostService {
                 id: response.id || 0,
                 mediaUrl: response.mediaUrl || '',
               };
-    
+           
               return [Media];
             }
-    
+            console.log(response)
             // Si l'API renvoie déjà un tableau
             return response.map((item: any) => ({
               id: item.id || 0,
