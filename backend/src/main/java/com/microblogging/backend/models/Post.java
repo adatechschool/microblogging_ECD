@@ -16,6 +16,9 @@ public class Post {
     
     private String description;
     
+    @Column(name = "media_url")
+    private String mediaUrl;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
     
@@ -24,9 +27,10 @@ public class Post {
     }
     
     // Constructeur avec paramètres
-    public Post(Long id, User user, String description, LocalDateTime createdAt) {
+    public Post(Long id, User user, String mediaUrl,String description, LocalDateTime createdAt) {
         this.id = id;
         this.user = user;
+        this.mediaUrl = mediaUrl;
         this.description = description;
         this.createdAt = createdAt;
     }
@@ -46,6 +50,14 @@ public class Post {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getMediaUrl() {
+        return mediaUrl;
+    }
+
+    public void setMediaUrl(String mediaUrl) {
+        this.mediaUrl = mediaUrl;
     }
 
     public String getDescription() {
