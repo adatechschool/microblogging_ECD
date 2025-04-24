@@ -1,11 +1,16 @@
   <!-- Sidebar droite -->
   <aside class="sidebar-right">
-    <p>Ici vous trouverez les profils et les tendances les plus recherchés... </p>
-    <div class="suggestions">
-      <!-- <app-user-card *ngFor="let user of suggestedUsers" [user]="user"></app-user-card> -->
-    </div>
     <div class="hashtags">
-      <h4>Les plus recherchés</h4>
+      <h2>Utilisateurs</h2>
+  <ul>
+    <li *ngFor="let u of users">
+      <img class="user-img" [src]="u.profilPictureUrl" alt="{{ u.alias }}" width="32" height="32" />
+      <strong>{{ u.alias }}</strong><br />
+      <small>{{ u.biography }}</small>
+    </li>
+  </ul>
+<br/>
+      <h4>Les tendances</h4>
       <ul>
         <li>#blabla</li>
         <li>#blabla</li>
