@@ -20,9 +20,10 @@
 .post-input {
   color: #fff;
   height: 5rem;
-  width: 20rem;
+  width: 18rem;
   background-color: transparent;
   border: 2px solid #00a887;
   border-radius: 5px;
+  padding-left: 2px;
 }
 
