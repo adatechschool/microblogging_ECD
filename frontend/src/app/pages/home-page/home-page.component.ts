@@ -28,27 +28,12 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadPosts();
-    this.loadMedias();
   }
 
   private loadPosts() {
     this.postService.getPosts().subscribe({
       next: (data) => {
         this.cardPost = data;
-        this.loading = false;
-      },
-      error: (err) => {
-        console.error('Erreur lors de la récupération des données', err);
-        this.error = true;
-        this.loading = false;
-      },
-    });
-  }
-
-  private loadMedias() {
-    this.postService.getMedias().subscribe({
-      next: (data) => {
-        this.media = data;
         this.loading = false;
       },
       error: (err) => {

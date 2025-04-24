@@ -4,6 +4,7 @@ export interface PostCard {
     alias: string;
     profilPictureUrl?: string;
   }
+  mediaUrl: string;
   description: string;
   createdAt: number;
 }

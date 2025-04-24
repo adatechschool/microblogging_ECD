@@ -8,11 +8,13 @@
 
   .search-button{
     background-color: #00a887;
-    height: 2rem;
+    height: 2.2rem;
     width: 5rem;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
+    margin: 5px;
+
   }
 
   .search-input {
